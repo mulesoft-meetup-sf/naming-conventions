@@ -1,0 +1,11 @@
+#%RAML 1.0 Trait
+description: Allows the endpoint to be searched by a field and order
+queryParameters:
+  fieldName?:
+    type: string
+  order?:
+    description: It can be ASC or DESC
+    enum:
+      - ASC
+      - DESC
+    type: string
