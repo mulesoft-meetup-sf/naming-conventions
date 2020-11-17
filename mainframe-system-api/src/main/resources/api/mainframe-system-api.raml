@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: mainframe-system-api
+
+securitySchemes:
+  oauth_2_0: !include /security-schemes/oauth_2_0.raml
+  basic: !include /security-schemes/basic.raml
+
+traits:
+  order: !include /traits/order.raml
+
+types:
+  user: !include /data-types/user.raml
+resourceTypes:
+  getResourceType: !include /resource-types/get-resource-type.raml
+  getCollectionResourceType: !include /resource-types/get-collection-resource-type.raml
+/users:
+  securedBy:
+    - basic
+  is: [order]
+  type:
+    getCollectionResourceType:
+      type-name: user
+      example: !include /examples/users.raml

@@ -1,0 +1,21 @@
+#%RAML 1.0 ResourceType
+get:
+  description: Get <<type-name>>
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<type-name>>[]
+          examples: <<example>>
+    404:
+      body:
+        application/json:
+          properties:
+            message:
+              type: string
+    500:
+      body:
+        application/json:
+          properties:
+            message: 
+              type: string
